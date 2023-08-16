@@ -44,15 +44,18 @@ function App() {
   return (
     <>
       <h2>A - Contatore & Props</h2>
-      {totalProd > 0 ? (
+      {totalProd !== 0 ? (
         <>
           <Total value={totalProd} />
+          <button onClick={inc}>Add</button>
           <button onClick={dec}>Remove</button>
         </>
       ) : (
-        <Empty />
+        <>
+          <Empty />
+          <button onClick={inc}>Add</button>
+        </>
       )}
-      <button onClick={inc}>Add</button>
 
       <Users />
     </>
