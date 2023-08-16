@@ -19,6 +19,10 @@ function App() {
   function inc() {
     setTotalProd((s) => s + 1);
   }
+
+  function dec() {
+    setTotalProd((s) => s - 1);
+  }
   console.log(totalProd);
 
   /*   const renderTotal = () => (
@@ -39,7 +43,15 @@ function App() {
 
   return (
     <>
-      {totalProd > 0 ? <Total value={totalProd} /> : <Empty />}
+      <h2>A - Contatore & Props</h2>
+      {totalProd > 0 ? (
+        <>
+          <Total value={totalProd} />
+          <button onClick={dec}>Remove</button>
+        </>
+      ) : (
+        <Empty />
+      )}
       <button onClick={inc}>Add</button>
 
       <Users />
